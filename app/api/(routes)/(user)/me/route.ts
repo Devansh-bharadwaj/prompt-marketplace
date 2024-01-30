@@ -4,7 +4,7 @@ import prisma from "@/lib/prismaDb";
 
 export async function GET(req: NextRequest){
     try {
-        const user: User | null = await currentUser();
+        const user: User | undefined = await currentUser();
 
         if(!user){
             return new NextResponse("Please login to access this resource", {status: 400})

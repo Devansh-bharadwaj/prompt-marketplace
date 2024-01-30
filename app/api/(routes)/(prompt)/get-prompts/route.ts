@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
     try {
-        const user: User | null = currentUser();
+        const user: User | null = await currentUser();
         const sellerId = user?.id;
         const prompts = await prisma.prompts.findMany({
             where: {
