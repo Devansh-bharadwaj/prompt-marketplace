@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
-    const user: User | null = await currentUser();
+    const user: User | undefined = await currentUser();
 
     if (!data.images) {
       data.images = [];
