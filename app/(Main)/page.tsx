@@ -6,7 +6,6 @@ import { getAllPrompts } from "@/actions/prompts/getAllPrompts";
 const Page = async () => {
   const data = await getUser();
   const promptsData = await getAllPrompts();
-  console.log(promptsData);
   return (
     <div>
       <RoutePage
